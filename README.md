@@ -60,10 +60,5 @@ python app.py
 
 Visit http://127.0.0.1:5000/ in your browser.
 
-__Screenshots__
----
-![Portfolio Screenshot](Screenshots/1.png)
-![Portfolio Screenshot](Screenshots/2.png)
-![Portfolio Screenshot](Screenshots/3.png)
-![Portfolio Screenshot](Screenshots/4.png)
+
 
