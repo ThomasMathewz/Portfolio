@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='button.css')}}">
+        <link rel="icon" type="image/png" sizes="42x42" href="static\images\favicon.png">
+        <title> {% block title %} {% endblock %} </title>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <header class="navbar">
+            <div class="logo">Thomas Mathew</div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <!-- Social icons -->
+                <a href="https://www.linkedin.com/in/tm1022" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/ThomasMathewz" target="_blank" class="social-icon">
+                    <i class="fab fa-github"></i>
+                </a>
+                <!-- Contact button -->
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=thomasmathewz2210@gmail.com" class="contact-btn">Contact Me</a>
+            </nav>
+        </header>
+
+        {% block content %} {% endblock %}
+
+    </body>
+</html>

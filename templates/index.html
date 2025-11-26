@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block title %} Portfolio {% endblock %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero fade-in">
+    <h1>Thomas Mathew</h1>
+    <p>Software Developer | AI & ML Enthusiast | Data Analyst</p>
+    <a class="codepen-button" href="{{ url_for('static', filename='Thomas_Resume.pdf') }}" download>
+        <span>Download Resume</span>
+    </a>
+</section>
+
+<!-- About -->
+<section id="about" class="section fade-in">
+    <h2>About Me</h2>
+    <p>
+        I’m a passionate software developer with strong proficiency in Python and a 
+        track record of building efficient solutions. I take pride in my problem-solving 
+        skills and consistently strive to deliver high-quality work.
+    </p>
+    <p>
+        Curious and adaptable, I view every challenge as a chance to grow and learn. At present, I’m 
+        deepening my expertise in Artificial Intelligence and Machine Learning, driven by a desire to create 
+        intelligent, impactful technologies. I’m excited to contribute to innovative projects and stay ahead in today’s fast-evolving
+        tech landscape.
+    </p>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="section fade-in">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+        <div><i class="fab fa-python"></i><p>Python</p></div>
+        <div><i class="fab fa-java"></i><p>Java</p></div>
+        <div><i class="fas fa-database"></i><p>SQL</p></div>
+        <div><i class="fab fa-html5"></i><p>HTML</p></div>
+        <div><i class="fas fa-code"></i><p>C</p></div>
+        <div><i class="fab fa-js"></i><p>JavaScript</p></div>
+        <div><i class="fas fa-project-diagram"></i><p>Machine Learning</p></div>
+        <div><i class="fas fa-brain"></i><p>Deep Learning</p></div>
+        <div><i class="fas fa-chart-line"></i><p>Data Science</p></div>
+        <div><i class="fab fa-github"></i><p>Git/GitHub</p></div>
+        <div><i class="fas fa-flask"></i><p>Flask</p></div>
+        <div><i class="fas fa-leaf"></i><p>Django</p></div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="section fade-in">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+
+        <!-- Ohari -->
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='images/ohari.jpg') }}" alt="Ohari Preview">
+            <h3>Ohari – Stock Prediction using LSTM</h3>
+            <p>
+                Built an LSTM-based stock price prediction model integrating sentiment analysis of financial news,
+                historical stock data, and technical indicators. Achieved above 90% accuracy.
+            </p>
+            <a href="https://github.com/ThomasMathewz/Ohari" target="_blank" class="project-btn">View on GitHub</a>
+        </div>
+
+        <!-- Neorvex -->
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='images/neorvex.jpg') }}" alt="Neorvex Preview">
+            <h3>Neorvex – Product Recommendation System</h3>
+            <p>
+                Developed a recommendation engine for Flipkart products using web scraping 
+                and sentiment analysis. Suggested top-rated products with improved reliability.
+            </p>
+            <a href="https://github.com/ThomasMathewz/Neorvex" target="_blank" class="project-btn">View on GitHub</a>
+        </div>
+
+        <!-- Rice Leaf Disease Detection Using Convolutional Neural Network -->
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='images/Rice.jpeg') }}" alt="Rice Leaf Disease Detection Preview">
+            <h3>Rice Leaf Disease Detection</h3>
+            <p>
+                This project uses a Convolutional Neural Network (CNN) model to classify three types of rice leaf diseases from image data. 
+                The model is trained on a small dataset of 120 images, demonstrating how deep learning can be effectively applied even to limited datasets through data augmentation and transfer learning techniques.
+            </p>
+            <a href="https://github.com/ThomasMathewz/Rice-Leaf-Diease-Prediction-Using-CNN.git" target="_blank" class="project-btn">View on GitHub</a>
+        </div>
+
+        <!-- Neorvex -->
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='images/House.jpg') }}" alt="Ames House Price Prediction Preview">
+            <h3>Ames House Price Prediction</h3>
+            <p>
+               Built a House Price Prediction system using the Ames Housing Dataset (79 features), with full preprocessing and feature engineering. 
+               Evaluated multiple ML models and TabNet, with XGBoost achieving the best performance after tuning and cross-validation.
+            </p>
+            <a href="https://github.com/ThomasMathewz/Ames-House-Price-Prediction.git" target="_blank" class="project-btn">View on GitHub</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- Education -->
+<section id="education" class="section fade-in">
+    <h2>Education</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <h3>Bachelor of Technology (Computer Science & Engineering)</h3>
+            <p>University College of Engineering, Thodupuzha (2021–2025) <br><strong>CGPA:</strong> 6.51 </p>
+        </div>
+        <div class="timeline-item">
+            <h3>Higher Secondary (Computer Science Stream)</h3>
+            <p>St. Thomas HSS, Erattayar (2019–2021) <br><strong>Score:</strong> 92% </p>
+        </div>
+        <div class="timeline-item">
+            <h3>High School</h3>
+            <p>Marian Public School, Marygiri (2018–2019) <br><strong>Score:</strong> 81.4% </p>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+{% endblock %}
