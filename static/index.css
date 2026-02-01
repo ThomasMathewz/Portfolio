@@ -270,3 +270,146 @@ body {
     color: #d1d5db;
     font-size: 0.95rem;
 }
+
+
+
+/* Contact Modal Overlay */
+
+.contact-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    z-index: 2000;
+
+    display: none;  
+    align-items: center;
+    justify-content: center;
+    
+
+    padding-top: 70px; /* navbar height */
+}
+
+
+.contact-modal.show {
+    display: flex;
+}
+
+.contact-modal-content {
+    background: linear-gradient(
+        180deg,
+        #0b1220 0%,
+        #060913 100%
+    );
+    padding: 28px 32px;
+    border-radius: 14px;
+    width: 340px;
+    text-align: center;
+    box-shadow:
+        0 0 0 1px rgba(99,102,241,0.15),
+        0 20px 50px rgba(0,0,0,0.85),
+        0 0 35px rgba(99,102,241,0.45);
+
+}
+
+.contact-modal-content {
+    transform: translateY(60px);
+}
+
+
+
+.contact-modal-content h3 {
+    color: #38bdf8;
+    margin-bottom: 15px;
+}
+
+/* Close Button */
+.contact-close {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #a3bffa;
+}
+
+.contact-close:hover {
+    color: #38bdf8;
+}
+
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button container */
+.contact-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;                 /* SPACE BETWEEN BUTTONS */
+    margin-top: 18px;
+}
+
+.contact-action-btn {
+    margin-top: 12px;
+    display: inline-flex;
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    background: transparent;
+    color: #7dd3fc;
+
+    border: 1px solid rgba(125,211,252,0.4);
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+/* Normalize anchor states so <a> matches <button> */
+a.contact-action-btn,
+a.contact-action-btn:link,
+a.contact-action-btn:visited,
+a.contact-action-btn:hover,
+a.contact-action-btn:active,
+a.contact-action-btn:focus {
+    color: #7dd3fc;
+    text-decoration: none;
+}
+
+.contact-action-btn:hover {
+    background: rgba(125,211,252,0.1);
+    color: #38bdf8;
+}
+
+.contact-action-btn + .contact-action-btn {
+    margin-left: 2px;
+}
+
+
+/* Copy feedback */
+.copy-feedback {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: #4ade80;
+
+    height: 20px;          /* RESERVED SPACE */
+    line-height: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.2s ease;
+}
+
+

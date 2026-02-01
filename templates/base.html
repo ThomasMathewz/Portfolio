@@ -2,6 +2,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index.css')}}">
         <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='button.css')}}">
+        <link rel="icon" type="image/png" sizes="42x42" href="static\images\favicon.png">
         <title> {% block title %} {% endblock %} </title>
     </head>
     <body>
@@ -20,12 +21,83 @@
                 <a href="https://github.com/ThomasMathewz" target="_blank" class="social-icon">
                     <i class="fab fa-github"></i>
                 </a>
-                <!-- Contact button -->
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=thomasmathewz2210@gmail.com" class="contact-btn">Contact Me</a>
+                <a href="#" class="contact-btn" id="openContact">Contact Me</a>
+
+                <!-- Contact Modal -->
+                <div class="contact-modal" id="contactModal">
+                    <div class="contact-modal-content">
+                        <span class="contact-close" id="closeContact">&times;</span>
+                        <h3>Contact Me</h3>
+
+                        <p class="contact-email">thomasmathewz2210@gmail.com</p>
+
+                        <button class="contact-action-btn" onclick="window.location.href='mailto:thomasmathewz2210@gmail.com'">
+                            Mail Me
+                        </button>
+                        <button class="contact-action-btn" id="copyEmail">
+                            Copy Email
+                        </button>
+
+                        <p class="copy-feedback" id="copyFeedback">
+                            Email copied!
+                        </p>
+
+                    </div>
+                </div>
             </nav>
         </header>
 
         {% block content %} {% endblock %}
 
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const openBtn = document.getElementById("openContact");
+                const modal = document.getElementById("contactModal");
+                const closeBtn = document.getElementById("closeContact");
+                const copyBtn = document.getElementById("copyEmail");
+                const feedback = document.getElementById("copyFeedback");
+
+                /* Ensure modal is closed on load */
+                modal.classList.remove("show");
+
+                /* Open modal */
+                openBtn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    modal.classList.add("show");
+                });
+
+                /* Close via X */
+                closeBtn.addEventListener("click", () => {
+                    modal.classList.remove("show");
+                });
+
+                /* Close by clicking outside */
+                window.addEventListener("click", (e) => {
+                    if (e.target === modal) {
+                        modal.classList.remove("show");
+                    }
+                });
+
+                /* Close with ESC key */
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "Escape") {
+                        modal.classList.remove("show");
+                    }
+                });
+
+                /* Copy email without layout shift */
+                copyBtn.addEventListener("click", () => {
+                    navigator.clipboard.writeText("thomasmathewz2210@gmail.com");
+
+                    feedback.style.opacity = "1";
+                    feedback.style.visibility = "visible";
+
+                    setTimeout(() => {
+                        feedback.style.opacity = "0";
+                        feedback.style.visibility = "hidden";
+                    }, 1500);
+                });
+            });
+        </script>
     </body>
 </html>
